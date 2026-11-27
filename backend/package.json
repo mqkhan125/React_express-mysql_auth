@@ -1,11 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Authentication System Backend",
   "main": "sever.js",
   "scripts": {
-    "dev": "nodemon sever.js"
-  },
+  "dev": "nodemon sever.js",
+  "start": "node sever.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -5,6 +5,7 @@ const cors = require("cors");
 const authRouter = require("./routes/authRoutes");
 
 const app = express();
+
 const allowedOrigins = (
   process.env.CORS_ORIGINS ||
   process.env.FRONTEND_URL ||
@@ -16,9 +17,16 @@ const allowedOrigins = (
 
 app.use(cors({ origin: allowedOrigins }));
 app.use(express.json({ limit: "10kb" }));
+
 app.use("/auth", authRouter);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
-});
+// Local development ke liye
+if (process.env.NODE_ENV !== "production") {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
+  });
+}
+
+// Vercel ke liye
+module.exports = app;
