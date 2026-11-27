@@ -18,6 +18,11 @@ const allowedOrigins = (
 app.use(cors({ origin: allowedOrigins }));
 app.use(express.json({ limit: "10kb" }));
 
+
+app.get("/", (req, res) => {
+  res.status(200).json({ status: "ok", message: "Auth API is running" });
+});
+
 app.use("/auth", authRouter);
 
 // Local development ke liye
