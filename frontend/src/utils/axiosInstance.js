@@ -9,7 +9,7 @@ import axios from "axios";
 const API = axios.create({
   baseURL:
     import.meta.env.VITE_API_BASE_URL ||
-    "https://reactexpress-mysqlauth-backend-e8xx3rrvi-qasim-lab.vercel.app",
+    "https://reactexpress-mysqlauth-backend-csbccgtez-qasim-lab.vercel.app",
 });
 
 // 1. Request Interceptor: Har request ke sath token khud-ba-khud lag jayega
