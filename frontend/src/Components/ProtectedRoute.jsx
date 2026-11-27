@@ -1,6 +1,7 @@
-import axios from "axios";
+
 import { useState, useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
+import API from "../utils/axiosInstance";
 
 const ProtectedRoute = () => {
   // Agar token nahi hai, toh foran 'false' set karein taake loading text na aaye
@@ -18,11 +19,7 @@ const ProtectedRoute = () => {
       }
 
       try {
-        await axios.get("http://localhost:3000/auth/profile", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+       await API.get("/auth/profile");
         setIsAuthenicated(true);
       } catch (error) {
         console.log(error);
