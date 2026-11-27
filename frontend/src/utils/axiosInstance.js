@@ -1,8 +1,15 @@
 import axios from "axios";
 
+// local k ly
+// const API = axios.create({
+//   baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:3000",
+// });
 
+// live k ly
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:3000",
+  baseURL:
+    import.meta.env.VITE_API_BASE_URL ||
+    "https://reactexpress-mysqlauth-backend-e8xx3rrvi-qasim-lab.vercel.app",
 });
 
 // 1. Request Interceptor: Har request ke sath token khud-ba-khud lag jayega
